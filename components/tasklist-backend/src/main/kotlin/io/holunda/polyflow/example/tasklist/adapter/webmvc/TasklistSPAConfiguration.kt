@@ -77,13 +77,13 @@ class TasklistSPAConfiguration : WebMvcConfigurer {
       .addMapping(Web.BASE_PATH + "/**")
       .allowedOrigins("http://localhost:4200")
       .allowedMethods(
-        HttpMethod.GET.name,
-        HttpMethod.HEAD.name,
-        HttpMethod.POST.name,
-        HttpMethod.DELETE.name,
-        HttpMethod.OPTIONS.name,
-        HttpMethod.PATCH.name,
-        HttpMethod.PUT.name
+        HttpMethod.GET.name(),
+        HttpMethod.HEAD.name(),
+        HttpMethod.POST.name(),
+        HttpMethod.DELETE.name(),
+        HttpMethod.OPTIONS.name(),
+        HttpMethod.PATCH.name(),
+        HttpMethod.PUT.name()
       )
   }
 

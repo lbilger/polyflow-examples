@@ -59,7 +59,6 @@ internal class TaskResourceIT {
     this.mockMvc
       .perform(
         post("${REQUEST_PATH}/task/{taskId}/claim", taskId)
-          .servletPath(REQUEST_PATH)
       )
       .andExpect(status().isBadRequest)
   }
@@ -74,7 +73,6 @@ internal class TaskResourceIT {
       .perform(
         post("${REQUEST_PATH}/task/{taskId}/claim", taskId)
           .header("X-Current-User-ID", "id1")
-          .servletPath(REQUEST_PATH)
       )
       .andExpect(status().isNotFound)
   }
@@ -92,7 +90,6 @@ internal class TaskResourceIT {
       .perform(
         post("${REQUEST_PATH}/task/{taskId}/claim", taskId)
           .header("X-Current-User-ID", "id1")
-          .servletPath(REQUEST_PATH)
       )
       .andExpect(status().isNoContent)
 
@@ -111,7 +108,6 @@ internal class TaskResourceIT {
       .perform(
         post("${REQUEST_PATH}/task/{taskId}/unclaim", taskId)
           .header("X-Current-User-ID", "id1")
-          .servletPath(REQUEST_PATH)
       )
       .andExpect(status().isNoContent)
 
@@ -132,7 +128,6 @@ internal class TaskResourceIT {
       .perform(
         post("${REQUEST_PATH}/task/{taskId}/defer", taskId)
           .header("X-Current-User-ID", "id1")
-          .servletPath(REQUEST_PATH)
           .contentType(MediaType.APPLICATION_JSON)
           .content(json)
       )
@@ -153,7 +148,6 @@ internal class TaskResourceIT {
       .perform(
         post("${REQUEST_PATH}/task/{taskId}/undefer", taskId)
           .header("X-Current-User-ID", "id1")
-          .servletPath(REQUEST_PATH)
       )
       .andExpect(status().isNoContent)
 

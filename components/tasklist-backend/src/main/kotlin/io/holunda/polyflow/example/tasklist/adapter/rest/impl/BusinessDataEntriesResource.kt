@@ -40,7 +40,7 @@ class BusinessDataEntriesResource(
           user = user,
           page = page,
           size = size,
-          sort = sort ?: "",
+          sort = sort,
           filters ?: listOf()
         )
       )
